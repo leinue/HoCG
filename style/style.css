@@ -1,0 +1,63 @@
+body{
+	background: rgb(250,250,250);
+}
+
+a{
+	text-decoration: none;
+}
+
+/*左侧菜单栏*/
+.left-panel{
+	width: 160px;
+	background: rgb(25,24,24);
+	top: 0px;
+	bottom: 0px;
+	position: fixed;
+	left: 0px;
+	color: rgb(153,153,153);
+	overflow-y: auto;
+}
+
+/*左侧菜单栏头部*/
+.panel-heading{
+	font-size: 125%;
+	font-weight: 300;
+	letter-spacing: 0.1em;
+	color: rgb(255,255,255);
+	margin-top: 0px;
+	padding: 0.5em 0.8em;
+}
+
+.panel-heading a{color: rgb(255,255,255);}
+
+.panel-heading a:hover,.panel-heading:hover{
+	color: rgb(153,153,153);
+	cursor: pointer;
+}
+
+/*左侧菜单栏头部以下*/
+.menu-list{
+	list-style: outside none none;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	border-top: 1px solid rgb(51,51,51);
+	font-size: 14px;
+}
+
+.menu-list li{
+	border: medium none;
+	white-space: normal;
+	padding: 0.625em 1em;
+	margin-left: -40px;
+}
+
+.menu-list .normal:hover{
+	background: rgb(51,51,51);
+	cursor: pointer;
+}
+
+.selected{
+	background: rgb(31,141,214);
+	color: rgb(255,255,255);
+	cursor: pointer;
+}
