@@ -1,11 +1,11 @@
 			<div class="content-panel">
 				<div class="content-heading">
-					<p class="heading-title">沿海的街</p>
+					<p class="heading-title">2015-1-13</p>
 					<p class="img-desc">This is my CG website</p>
 				</div>
 
 				<div class="content-detail">
-					<p class="de-title">2015-1-13</p>
+					<p class="de-title">沿海的街</p>
 					<P class="de-desc">To create a default inline form, add the pure-form classname to any </p>
 				</div>
 

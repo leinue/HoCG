@@ -34,7 +34,7 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('.main').load('latest.php');
-			
+
 			//对左边菜单栏使用渐隐渐显动画效果
 			$('li.normal').css("opacity",'0.5');
 
@@ -65,7 +65,7 @@
 
 			$('li#contact').click(function(){
 				toggleMenu(this);
-				$('.main').load('contact.html');
+				$('.main').load('contact.html');	
 			});
 
 			$('li#latest').click(function(){
