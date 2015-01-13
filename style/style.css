@@ -1,12 +1,13 @@
 body{
-	background: rgb(250,250,250);
+	font-family"微软雅黑,宋体";
+	background: rgb(255,255,255);
 }
 
 a{
 	text-decoration: none;
 }
 
-/*左侧菜单栏*/
+/***********************左侧菜单栏***********************/
 .left-panel{
 	width: 160px;
 	background: rgb(25,24,24);
@@ -16,6 +17,7 @@ a{
 	left: 0px;
 	color: rgb(153,153,153);
 	overflow-y: auto;
+	float: left;
 }
 
 /*左侧菜单栏头部*/
@@ -61,3 +63,101 @@ a{
 	color: rgb(255,255,255);
 	cursor: pointer;
 }
+
+/***********************右边主体************************/
+.main{
+	margin-left: 160px;
+}
+
+.content-panel{
+	width: 700px;
+	height: 150px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+/*右边主页头部*/
+.content-heading{
+	border-bottom: 1px solid rgb(230,230,230);
+}
+
+.content-heading h1{
+	font-size: 200%;
+	font-weight: lighter;
+	color: rgb(75,75,75);
+}
+
+.content-heading h3{
+	font-size: 110%;
+	color: rgb(60,60,60);
+	letter-spacing: -0.02em;
+	font-weight: lighter;
+}
+
+.heading-title{
+	font-size: 26px;
+	color: rgb(75,75,75);
+}
+
+.img-desc{
+	font-size: 16px;
+	color: rgb(119,119,119);
+}
+
+/*图片详细描述区域*/
+
+.content-detail{
+	text-align: left;
+	width: 500px;
+	margin: 0 auto;
+	margin-top: 20px;
+	color: rgb(119,119,119);
+	border-bottom: 1px solid rgb(230,230,230);
+}
+
+.de-title{font-size: 20px;}
+
+.de-desc{font-size: 14px;}
+
+/*右边显示图片区域*/
+.content-body-img{
+	margin-top: 10px;
+	text-align: center;
+	color: rgb(119,119,119);
+	margin: 0 auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 10px;
+}
+
+.content-body-img img{
+	width: 500px;
+	height:500px; 
+}
+
+/*标签区域*/
+
+.content-tags{
+	border: 1px solid rgb(230,230,230);
+	background: rgb(250,250,250);
+	margin: 0 auto;
+	margin-bottom: 20px;
+	width: 500px;
+	overflow-y: auto;
+}
+
+.tags{
+	list-style: none;
+	float: left;
+	margin-left: -20px;
+}
+
+.tags li{
+	float: left;
+	margin-right: 20px;
+	color: rgb(37,143,184);
+	font-size: 14px;
+}
+
+/************************页面底部************************/
+
