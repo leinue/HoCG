@@ -10,7 +10,7 @@
 	<body>
 		<div class="left-panel">
 			<div class="panel-heading">
-				<a href="">HoCG</a>
+				<a id="latest" href="">HoCG</a>
 			</div>
 			<ul class="menu-list">
 				<li class="active" id="latest">Latest</li>
@@ -27,43 +27,14 @@
 		</div>
 	
 		<div class="main">
-			<div class="content-panel">
-				<div class="content-heading">
-					<p class="heading-title">沿海的街</p>
-					<p class="img-desc">This is my CG website</p>
-				</div>
 
-				<div class="content-detail">
-					<p class="de-title">2015-1-13</p>
-					<P class="de-desc">To create a default inline form, add the pure-form classname to any </p>
-				</div>
-
-				<div class="content-body-img">
-					<img alt="hhh" src="http://i62.tinypic.com/21vi94.jpg" />
-				</div>
-				
-				<div class="content-tags">
-					<ul class="tags">
-						<li>蛤蛤蛤</li>
-						<li>江泽民</li>
-						<li>江泽民</li>
-						<li>江泽民</li>
-						<li>江泽民</li>
-						<li>江泽民</li>
-						<li>江泽民</li>
-						<li>江泽民</li>
-						<li>江泽民</li>
-						<li>江泽民</li>
-						<li>江泽民</li>
-					</ul>
-				</div>
-			</div>
 		</div>
  
 	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
-
+			$('.main').load('latest.php');
+			
 			//对左边菜单栏使用渐隐渐显动画效果
 			$('li.normal').css("opacity",'0.5');
 
@@ -86,6 +57,7 @@
 				}
 			);
 
+			/*菜单项的单击事件*/
 			$('li#about').click(function(){
 				toggleMenu(this);
 				$('.main').load('about.html');
@@ -96,19 +68,38 @@
 				$('.main').load('contact.html');
 			});
 
+			$('li#latest').click(function(){
+				toggleMenu(this);
+				$('.main').load('latest.php');
+			});
+
+			$('li#memories').click(function(){
+				toggleMenu(this);
+				$('.main').load('memories.php');
+			});
+
+			$('li#github').click(function(){
+				toggleMenu(this);
+				$('.main').load('github.html');
+			});
+
+			$('li#api').click(function(){
+				toggleMenu(this);
+				$('.main').load('api.html');
+			});
 
 			//对左侧菜单的更换
 			function toggleMenu(obj){
 				//获得当前活跃菜单项的index
 				var liIndex=$('li.active').index();
+				//取消当前活跃菜单项的活跃
 				$('li.active').removeClass('active');
 				$('li:eq('+liIndex+')').addClass('normal');
-				console.log($('li:eq('+liIndex+')'));
 
+				//置当前点击的菜单项为活跃
 				$(obj).removeClass('normal');
 				$(obj).addClass('active');	
 			}
-
 
 		});
 	</script>
