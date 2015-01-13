@@ -13,16 +13,16 @@
 				<a href="">HoCG</a>
 			</div>
 			<ul class="menu-list">
-				<li class="selected">Latest</li>
-				<li class="normal">Memories</li>
+				<li class="active" id="latest">Latest</li>
+				<li class="normal" id="memories">Memories</li>
 			</ul>
 			<ul class="menu-list">
-				<li class="normal">GitHub</li>
-				<li class="normal">API Documents</li>
+				<li class="normal" id="github">GitHub</li>
+				<li class="normal" id="api">API Documents</li>
 			</ul>
 			<ul class="menu-list">
-				<li class="normal">About</li>
-				<li class="normal">Contact</li>
+				<li class="normal" id="about">About</li>
+				<li class="normal" id="contact">Contact</li>
 			</ul>
 		</div>
 	
@@ -57,26 +57,8 @@
 						<li>江泽民</li>
 					</ul>
 				</div>
-				<!-- 多说评论框 start -->
-				<div class="ds-thread" data-thread-key="请将此处替换成文章在你的站点中的ID" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
-				<!-- 多说评论框 end -->
-				<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-				<script type="text/javascript">
-				var duoshuoQuery = {short_name:"hocg"};
-					(function() {
-						var ds = document.createElement('script');
-						ds.type = 'text/javascript';ds.async = true;
-						ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-						ds.charset = 'UTF-8';
-						(document.getElementsByTagName('head')[0] 
-			 			|| document.getElementsByTagName('body')[0]).appendChild(ds);
-					})();
-				</script>
-				<!-- 多说公共JS代码 end -->
 			</div>
 		</div>
-
-
  
 	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
 	<script type="text/javascript">
@@ -103,6 +85,29 @@
 					$(this).stop().animate({opacity:0.5},'slow');
 				}
 			);
+
+			$('li#about').click(function(){
+				toggleMenu(this);
+				$('.main').load('about.html');
+			});
+
+			$('li#contact').click(function(){
+				toggleMenu(this);
+				$('.main').load('contact.html');
+			});
+
+
+			//对左侧菜单的更换
+			function toggleMenu(obj){
+				//获得当前活跃菜单项的index
+				var liIndex=$('li.active').index();
+				$('li.active').removeClass('active');
+				$('li:eq('+liIndex+')').addClass('normal');
+				console.log($('li:eq('+liIndex+')'));
+
+				$(obj).removeClass('normal');
+				$(obj).addClass('active');	
+			}
 
 
 		});

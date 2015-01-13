@@ -53,12 +53,16 @@ a{
 	margin-left: -40px;
 }
 
-.menu-list .normal:hover{
+.menu-list li:hover{
+	cursor:pointer;
+}
+
+.normal:hover{
 	background: rgb(51,51,51);
 	cursor: pointer;
 }
 
-.selected{
+.active{
 	background: rgb(31,141,214);
 	color: rgb(255,255,255);
 	cursor: pointer;
@@ -157,6 +161,12 @@ a{
 	margin-right: 20px;
 	color: rgb(37,143,184);
 	font-size: 14px;
+}
+
+.ds-thread{
+	margin-left: 160px;
+	position: absolute;
+	bottom: 0px;
 }
 
 /************************页面底部************************/
