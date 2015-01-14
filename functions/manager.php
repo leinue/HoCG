@@ -83,7 +83,7 @@ class pdoOperation{
 
 		if($stmt){
 			$stmt->execute($arr);
-			$row=$stmt->fetch();
+			$row=$stmt->fetch(PDO::FETCH_ASSOC);
 			return $row;
 		}else{return false;}
 	}
@@ -125,8 +125,8 @@ class CGManager extends pdoOperation{
 
 }
 
-$pdo=new PDO("mysql:dbname=$dbname;host=$host",$user,$password);
-$cgm=new CGManager($pdo);
+//$pdo=new PDO("mysql:dbname=$dbname;host=$host",$user,$password);
+//$cgm=new CGManager($pdo);
 //$cgm->insert('fuck','shit','bitch','poo','r.jpg');
 //$cgm->delete(1);
 //print_r($cgm->getAll());
