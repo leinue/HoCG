@@ -39,6 +39,7 @@ class pdoOperation{
 	public $updateCG="UPDATE `hocg_cg` SET `title`=?,`introduction`=?,`description`=?,`tags`=?,`imgsrc`=?,`publicTime`=? WHERE `id`=?";
 	public $getAllCG="SELECT * FROM `hocg_cg`";
 	public $getOddCG="SELECT * FROM `hocg_cg` WHERE `id`=?";
+	public $latestCG="SELECT * FROM `hocg_cg` WHERE `id` IN (SELECT MAX(`id`) FROM `hocg_cg`)";
 
 	protected static $pdo;
 	
@@ -118,6 +119,9 @@ class CGManager extends pdoOperation{
 		return $this->submitQuery($this->updateCG,array($title,$introduction,$description,$tags,$imgsrc,$id));
 	}
 
+	function getLatest(){
+		return $this->fetchOdd($this->latestCG,array($id));
+	}
 
 }
 
@@ -127,4 +131,5 @@ $cgm=new CGManager($pdo);
 //$cgm->delete(1);
 //print_r($cgm->getAll());
 //print_r($cgm->get(2));
+//print_r($cgm->getLatest());
 ?>
