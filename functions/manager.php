@@ -1,5 +1,21 @@
 <?php
 
+require('config.php');
+error_reporting(E_ALL ^ E_NOTICE);
+
+/**
+* CG类
+*/
+class CG{
+	private $title;
+	private $introduction;
+	private $description;
+	private $tags;
+	private $imgsrc;
+
+	function get
+}
+
 /**
 * class pdoOperation
 * 用于封装查询语句时的必须查询过程
@@ -9,7 +25,10 @@
 */
 class pdoOperation{
 
-	
+	public $addNewCG="INSERT INTO `hocg_cg`(`title`, `introduction`, `description`, `tags`, `imgsrc`) VALUES (?,?,?,?,?)";
+	public $deleteCG="DELETE FROM `hocg_cg` WHERE `id`=?";
+	public $updateCG="";
+	public $getAllCG="";
 
 	protected static $pdo;
 	
@@ -58,5 +77,44 @@ class pdoOperation{
 		}else{return false;}
 	}
 }
+
+/**
+* CGmanager类,用来对CG进行增删查改操作
+* 
+*/
+class CGManager extends pdoOperation{
+	
+	function __construct($pdo){
+		parent::$pdo=$pdo;
+	}
+
+	function insert($title,$introduction,$description,$tags,$imgsrc){
+		echo $this->addNewCG;
+		$this->submitQuery($this->addNewCG,array($title,$introduction,$description,$tags,$imgsrc));
+	}
+
+	function delete($id){
+		$this->submitQuery($this->deleteCG,array($id));
+	}
+
+	function getAll(){
+
+	}
+
+	function get($id){
+
+	}
+
+	function update(){
+
+	}
+
+
+}
+
+$pdo=new PDO("mysql:dbname=$dbname;host=$host",$user,$password);
+$cgm=new CGManager($pdo);
+//$cgm->insert('fuck','shit','bitch','poo','r.jpg');
+//$cgm->delete(1);
 
 ?>
