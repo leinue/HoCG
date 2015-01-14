@@ -23,8 +23,6 @@ class CG{
 
 	function getImgsrc(){return $this->imgsrc;}
 
-	function getImgsrc(){return $this->imgsrc;}
-
 }
 
 /**
@@ -100,24 +98,23 @@ class CGManager extends pdoOperation{
 	}
 
 	function insert($title,$introduction,$description,$tags,$imgsrc){
-		echo $this->addNewCG;
-		$this->submitQuery($this->addNewCG,array($title,$introduction,$description,$tags,$imgsrc));
+		return $this->submitQuery($this->addNewCG,array($title,$introduction,$description,$tags,$imgsrc));
 	}
 
 	function delete($id){
-		$this->submitQuery($this->deleteCG,array($id));
+		return $this->submitQuery($this->deleteCG,array($id));
 	}
 
 	function getAll(){
-
+		return $this->fetchClassQuery($this->getAllCG,array(),'CG');
 	}
 
 	function get($id){
 
 	}
 
-	function update(){
-
+	function update($id,$title,$introduction,$description,$tags,$imgsrc){
+		return $this->submitQuery($this->updateCG,array($title,$introduction,$description,$tags,$imgsrc,$id));
 	}
 
 
@@ -127,5 +124,6 @@ $pdo=new PDO("mysql:dbname=$dbname;host=$host",$user,$password);
 $cgm=new CGManager($pdo);
 //$cgm->insert('fuck','shit','bitch','poo','r.jpg');
 //$cgm->delete(1);
+//print_r($cgm->getAll());
 
 ?>
