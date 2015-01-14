@@ -38,6 +38,7 @@ class pdoOperation{
 	public $deleteCG="DELETE FROM `hocg_cg` WHERE `id`=?";
 	public $updateCG="UPDATE `hocg_cg` SET `title`=?,`introduction`=?,`description`=?,`tags`=?,`imgsrc`=?,`publicTime`=? WHERE `id`=?";
 	public $getAllCG="SELECT * FROM `hocg_cg`";
+	public $getOddCG="SELECT * FROM `hocg_cg` WHERE `id`=?";
 
 	protected static $pdo;
 	
@@ -110,7 +111,7 @@ class CGManager extends pdoOperation{
 	}
 
 	function get($id){
-
+		return $this->fetchOdd($this->getOddCG,array($id));
 	}
 
 	function update($id,$title,$introduction,$description,$tags,$imgsrc){
@@ -125,5 +126,5 @@ $cgm=new CGManager($pdo);
 //$cgm->insert('fuck','shit','bitch','poo','r.jpg');
 //$cgm->delete(1);
 //print_r($cgm->getAll());
-
+//print_r($cgm->get(2));
 ?>
