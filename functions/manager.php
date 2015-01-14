@@ -12,8 +12,19 @@ class CG{
 	private $description;
 	private $tags;
 	private $imgsrc;
+	
+	function getTitle(){return $this->title;}
 
-	function get
+	function getIntroduction(){return $this->introduction;}
+
+	function getDescription(){return $this->description;}
+
+	function getTags(){return $this->tags;}
+
+	function getImgsrc(){return $this->imgsrc;}
+
+	function getImgsrc(){return $this->imgsrc;}
+
 }
 
 /**
@@ -27,8 +38,8 @@ class pdoOperation{
 
 	public $addNewCG="INSERT INTO `hocg_cg`(`title`, `introduction`, `description`, `tags`, `imgsrc`) VALUES (?,?,?,?,?)";
 	public $deleteCG="DELETE FROM `hocg_cg` WHERE `id`=?";
-	public $updateCG="";
-	public $getAllCG="";
+	public $updateCG="UPDATE `hocg_cg` SET `title`=?,`introduction`=?,`description`=?,`tags`=?,`imgsrc`=?,`publicTime`=? WHERE `id`=?";
+	public $getAllCG="SELECT * FROM `hocg_cg`";
 
 	protected static $pdo;
 	
