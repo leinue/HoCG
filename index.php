@@ -18,7 +18,7 @@
 			</ul>
 			<ul class="menu-list">
 				<li class="normal" id="github">GitHub</li>
-				<li class="normal" id="api">API Documents</li>
+				<li class="normal" id="api">Design</li>
 			</ul>
 			<ul class="menu-list">
 				<li class="normal" id="about">About</li>
