@@ -134,3 +134,39 @@ ul{
 	cursor: pointer;
 	background: rgb(238,238,238);
 }
+
+.inputarea{
+	width: 350px;
+	height: 30px;
+	font-size: 14px;
+	font-family: '微软雅黑';
+	margin-bottom: 20px;
+	border: 1px solid rgb(204,204,204);
+	box-shadow: none;
+	border-radius: 2px;
+}
+
+.inputarea:hover{
+	border: 1px solid rgb(179,179,179);
+}
+
+.imgsrc{
+	width: 708px;
+}
+
+.new-cg{
+	margin-top: 20px;
+}
+
+textarea{
+	width: 706px;
+	height: 100px;
+	margin-bottom: 20px;
+	font-family: '微软雅黑';
+	font-size: 14px;
+}
+
+#submit-cg{
+	width: 712px;
+	height: 30px;
+}
