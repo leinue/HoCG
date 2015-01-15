@@ -3,17 +3,25 @@ header("Content-type: text/html; charset=utf-8");
 require('../functions/manager.php');
 require('../functions/functions.inc.php');
 
-$user=$_POST['user'];
-$pw=$_POST['pw'];
+session_start();
 
-$pdo=new PDO("mysql:dbname=$dbname;host=$host",$name,$pw);
-$am=new adminManager($pdo);
+if(!$_SESSION){
+	$user=test_input($_POST['user']);
+	$pw=test_input($_POST['pw']);
 
-$loginResult=$am->login($user,$pw);
+	$pdo=new PDO("mysql:dbname=$dbname;host=$host",$name,$pw);
+	$am=new adminManager($pdo);
 
-if($loginResult){
-	echo 'denglu';
+	$loginResult=$am->login($user,$pw);
+
+	if($loginResult){
+		$_SESSION['admin']=$loginResult[0]->getName();
+		echo '1001';
+	}else{
+		echo '1000';
+	}
 }else{
-	echo '登录失败<a href="">点此返回</a>';
+	echo '1002';//已登录
 }
+
 ?>
