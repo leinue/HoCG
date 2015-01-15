@@ -26,6 +26,19 @@ class CG{
 }
 
 /**
+*  admin类
+*/
+class admin{
+	
+	private $name;
+	private $pw;
+
+	function getName(){return $this->name;}
+
+	function getPW(){return $this->pw;}
+}
+
+/**
 * class pdoOperation
 * 用于封装查询语句时的必须查询过程
 * @submitQuery()使用pdo的预处理语句进行查询,比较安全
@@ -34,12 +47,17 @@ class CG{
 */
 class pdoOperation{
 
+	//CG数据SQL
 	public $addNewCG="INSERT INTO `hocg_cg`(`title`, `introduction`, `description`, `tags`, `imgsrc`) VALUES (?,?,?,?,?)";
 	public $deleteCG="DELETE FROM `hocg_cg` WHERE `id`=?";
 	public $updateCG="UPDATE `hocg_cg` SET `title`=?,`introduction`=?,`description`=?,`tags`=?,`imgsrc`=?,`publicTime`=? WHERE `id`=?";
 	public $getAllCG="SELECT * FROM `hocg_cg`";
 	public $getOddCG="SELECT * FROM `hocg_cg` WHERE `id`=?";
 	public $latestCG="SELECT * FROM `hocg_cg` WHERE `id` IN (SELECT MAX(`id`) FROM `hocg_cg`)";
+
+	//ADMIN SQL
+	public $loginIn="SELECT * FROM `hocg_admin` WHERE `name`=?, `pw`=?";
+	public $alterPW="UPDATE `hocg_admin` SET `pw`=? WHERE `name`=? AND `pw`=?";
 
 	protected static $pdo;
 	
@@ -132,4 +150,22 @@ class CGManager extends pdoOperation{
 //print_r($cgm->getAll());
 //print_r($cgm->get(2));
 //print_r($cgm->getLatest());
+
+/**
+* adminManager
+*/
+class adminManager extends pdoOperation{
+
+	function __construct($pdo){
+		parent::$pdo=$pdo;
+	}
+
+	function login($name,$pw){
+		return $this->fetchClassQuery($this->loginIn,array($name,$pw),'admin');
+	}
+
+	function updatePw($name,$old,$new){
+		return $this->submitQuery($this->alterPW,array($new,$name,$old));
+	}
+}
 ?>
