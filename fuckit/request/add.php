@@ -13,10 +13,14 @@ if($_SESSION){
 	$imgsrc=$_GET['imgsrc'];
 	$tags=$_GET['tags'];
 
-	if($cgm->insert($title,$introduction,$description,$tags,$imgsrc)){
-		echo '1003';//插入新CG成功
+	if(strlen($title)!=0 && strlen($introduction)!=0 && strlen($introduction)!=0 && strlen($imgsrc)!=0 && strlen($tags)!=0){
+		if($cgm->insert($title,$introduction,$description,$tags,$imgsrc)){
+			echo '1003';//插入新CG成功
+		}else{
+			echo '1004';//插入新CG失败
+		}
 	}else{
-		echo '1004';//插入新CG失败
+		echo '1005';//有空数据
 	}
 }else{
 	echo '1000';//未登录或登录失败

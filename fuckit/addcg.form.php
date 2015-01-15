@@ -30,7 +30,7 @@
 							tags:tags
 						},
 						function(data){
-							$('.inner-heading').text($('.inner-heading').html()+' - '+data);
+							$('.inner-heading').text('新增CG  - '+data);
 						}
 					);
 				});
