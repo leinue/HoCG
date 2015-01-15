@@ -1,0 +1,57 @@
+body{
+	background: rgb(250,250,250);
+}
+
+.login{
+	width: 800px;
+	height: 300px;
+	border: 1px solid rgb(221,221,221);
+	margin: 0 auto;
+	background: rgb(255,255,255);
+	margin-top: 100px;
+}
+
+.login-heading{
+	text-align: center;
+	color: rgb(51,51,51);
+	margin: 20px;
+	font-size: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid rgb(221,221,221);
+}
+
+.login-form{
+	width: 350px;
+	margin: 0 auto;
+}
+
+.login-form .inputarea{
+	width: 350px;
+	height: 30px;
+	font-size: 14px;
+	font-family: '微软雅黑';
+	margin-bottom: 20px;
+	border: 1px solid rgb(204,204,204);
+	box-shadow: none;
+	border-radius: 2px;
+}
+
+.login-form .inputarea:hover{
+	border: 1px solid rgb(179,179,179);
+}
+
+.login-form form .sub{
+	font-family: '微软雅黑';
+	width: 354px;
+	height:30px;
+	background: rgb(233,233,233);
+	outline: medium none;
+	font-size: 14px;
+	list-style: outside none none;
+	border: 1px solid rgb(204,204,204);
+}
+
+.login-form form .sub:hover{
+	cursor: pointer;
+	background: rgb(238,238,238);
+}
