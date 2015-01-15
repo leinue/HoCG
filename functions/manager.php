@@ -56,7 +56,7 @@ class pdoOperation{
 	public $latestCG="SELECT * FROM `hocg_cg` WHERE `id` IN (SELECT MAX(`id`) FROM `hocg_cg`)";
 
 	//ADMIN SQL
-	public $loginIn="SELECT * FROM `hocg_admin` WHERE `name`=?, `pw`=?";
+	public $loginIn="SELECT * FROM `hocg_admin` WHERE `name`=? AND `pw`=?";
 	public $alterPW="UPDATE `hocg_admin` SET `pw`=? WHERE `name`=? AND `pw`=?";
 
 	protected static $pdo;
