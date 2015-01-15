@@ -1,0 +1,48 @@
+body{
+	background: rgb(241,241,241);
+}
+
+a{
+	text-decoration: none;
+	color: rgb(51,51,51);
+}
+
+.heading{
+	padding: 0px;
+	margin: 0px;
+	height: 55px;
+	background: rgb(255,255,255);
+	border-bottom: 1px solid #EBEBEB;
+	margin-left: -9px;
+	margin-top: -9px;
+	width: 100%;
+	position: fixed;
+}
+
+.heading-logo{
+	font-size: 20px;
+	color: rgb(51,51,51);
+	float: left;
+	padding: 14px;
+	padding-left: 100px;
+}
+
+.heading-logo a:hover{color: rgb(151,151,151);}
+
+.heading-menu{margin-left: 50px;}
+
+.heading-menu ul{list-style: none;}
+
+.heading-menu ul li{
+	float: left;
+	height: 39px;
+	width: 100px;
+	text-align: center;
+	margin-top: -16px;
+	padding-top: 16px;
+}
+
+.heading-menu ul li:hover,.active{
+	cursor: pointer;
+	background: rgb(238,238,238);
+}

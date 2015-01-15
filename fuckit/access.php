@@ -16,9 +16,9 @@ if(!$_SESSION){
 
 	if($loginResult){
 		$_SESSION['admin']=$loginResult[0]->getName();
-		echo '1001';
+		echo '1001';//登录成功
 	}else{
-		echo '1000';
+		echo '1000';//登录失败
 	}
 }else{
 	echo '1002';//已登录
