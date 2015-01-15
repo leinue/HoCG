@@ -58,9 +58,6 @@
 			);
 
 			/*菜单项的单击事件*/
-			$('li').click(function(){
-				
-			});
 			$('li#about').click(function(){
 				toggleMenu(this);
 				$('.main').load('about.php');

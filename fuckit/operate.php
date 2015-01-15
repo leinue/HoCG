@@ -24,13 +24,22 @@ if(!$_SESSION){
 				</ul>
 			</div>
 		</div>
+		<div class="main">
+			<div class="inner">
+				<div class="inner-heading">CG数据管理</div>
+			</div>
+		</div>
+		<div class="footer">
+			sddssd
+		</div>
 	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$('.main').load('latest.php');
+			$('.main').load('manager.php');
 
 			//对左边菜单栏使用渐隐渐显动画效果
-			$('li').css("opacity",'0.5');
+			$('li').css("opacity",'0.7');
+			$('.heading').css("opacity",'0.8');
 
 			$('li').hover(
 				function(){
@@ -70,10 +79,8 @@ if(!$_SESSION){
 				var liIndex=$(obj).index();
 				//取消当前活跃菜单项的活跃
 				$('li.active').removeClass('active');
-				$('li:eq('+liIndex+')').addClass('normal');
 
 				//置当前点击的菜单项为活跃
-				$(obj).removeClass('normal');
 				$(obj).addClass('active');
 				return liIndex;
 			}
