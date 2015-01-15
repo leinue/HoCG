@@ -18,7 +18,6 @@
 			</ul>
 			<ul class="menu-list">
 				<li class="normal" id="github">GitHub</li>
-				<li class="normal" id="api">Design</li>
 				<li class="normal" id="history">History</li>
 			</ul>
 			<ul class="menu-list">
@@ -59,6 +58,9 @@
 			);
 
 			/*菜单项的单击事件*/
+			$('li').click(function(){
+				
+			});
 			$('li#about').click(function(){
 				toggleMenu(this);
 				$('.main').load('about.php');
@@ -84,9 +86,9 @@
 				$('.main').load('github.php');
 			});
 
-			$('li#api').click(function(){
+			$('li#history').click(function(){
 				toggleMenu(this);
-				$('.main').load('api.php');
+				$('.main').load('history.php');
 			});
 
 			//对左侧菜单的更换
