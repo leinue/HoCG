@@ -19,6 +19,7 @@
 			<ul class="menu-list">
 				<li class="normal" id="github">GitHub</li>
 				<li class="normal" id="api">Design</li>
+				<li class="normal" id="history">History</li>
 			</ul>
 			<ul class="menu-list">
 				<li class="normal" id="about">About</li>
@@ -60,12 +61,12 @@
 			/*菜单项的单击事件*/
 			$('li#about').click(function(){
 				toggleMenu(this);
-				$('.main').load('about.html');
+				$('.main').load('about.php');
 			});
 
 			$('li#contact').click(function(){
 				toggleMenu(this);
-				$('.main').load('contact.html');	
+				$('.main').load('contact.php');	
 			});
 
 			$('li#latest').click(function(){
@@ -80,12 +81,12 @@
 
 			$('li#github').click(function(){
 				toggleMenu(this);
-				$('.main').load('github.html');
+				$('.main').load('github.php');
 			});
 
 			$('li#api').click(function(){
 				toggleMenu(this);
-				$('.main').load('api.html');
+				$('.main').load('api.php');
 			});
 
 			//对左侧菜单的更换
