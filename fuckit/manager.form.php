@@ -40,3 +40,16 @@
 					</table>
 				</div>
 			</div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('li').css("opacity",'0.7');
+			$('li').hover(
+				function(){
+					$(this).stop().animate({opacity:1},'slow');
+				},
+				function(){
+					$(this).stop().animate({opacity:0.3},'slow');
+				}
+			);
+		});
+	</script>

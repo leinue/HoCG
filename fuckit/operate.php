@@ -42,7 +42,7 @@ if(!$_SESSION){
 					$(this).stop().animate({opacity:1},'slow');
 				},
 				function(){
-					$(this).stop().animate({opacity:0.3},'slow');
+					$(this).stop().animate({opacity:0.5},'slow');
 				}
 			);
 

@@ -13,6 +13,14 @@
 			</div>
 			<script type="text/javascript">
 			$(document).ready(function(){
+				$('.btn').hover(
+					function(){
+						$(this).stop().animate({opacity:1},'slow');
+					},
+					function(){
+						$(this).stop().animate({opacity:0.7},'slow');
+					}
+				);
 				$('#submit-cg').click(function(){
 					console.log('dsdssd');
 					var title=$('#title').val();
