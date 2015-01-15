@@ -7,6 +7,10 @@ a{
 	color: rgb(51,51,51);
 }
 
+ul{
+	list-style: none;
+}
+
 .heading{
 	padding: 0px;
 	margin: 0px;
@@ -50,9 +54,9 @@ a{
 .main{
 	margin-left: 100px;
 	width: 800px;
-	height: 800px;
 	padding-top: 60px;
 	padding-left: 60px;
+	margin-bottom: 50px;
 }
 
 .inner{
@@ -67,4 +71,66 @@ a{
 	font-size: 18px;
 	color: rgb(51,51.51);
 	border-bottom: 1px solid rgb(221,221,221);
+}
+
+/*管理列表*/
+
+.mgr-box{
+	border-bottom: 1px solid rgb(221,221,221);
+}
+
+.mgr-box table{
+	list-style: none;
+}
+
+.mgr-box,.main-title{
+	margin: 20px;
+}
+
+.mgr-box table{
+	border-collapse: collapse;
+	background: rgb(255,255,255);
+}
+
+.mgr-box table tr{
+	height: 36px;
+}
+
+.mgr-box table .mgr-content:hover{
+	background: rgb(245,245,245);
+}
+
+.mgr-box table tr th,.mgr-box table tr td{
+	border: 1px solid rgb(221,221,221);
+	text-align: center;
+	padding: 5px;
+}
+
+.mgr-box table tr th{
+	border-bottom: 2px solid rgb(221,221,221);
+}
+
+.mgr-content td a{
+	text-decoration: none;
+	color: rgb(0,0,0);
+}
+
+.mgr-content td a:hover{
+	color: rgb(127, 140, 141);
+}
+
+.btn{
+	font-family: '微软雅黑';
+	width: 50px;
+	height:25px;
+	background: rgb(233,233,233);
+	outline: medium none;
+	font-size: 14px;
+	list-style: outside none none;
+	border: 1px solid rgb(204,204,204);
+}
+
+.btn:hover{
+	cursor: pointer;
+	background: rgb(238,238,238);
 }
