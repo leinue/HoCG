@@ -12,6 +12,7 @@ class CG{
 	private $description;
 	private $tags;
 	private $imgsrc;
+	private $publicTime;
 	
 	function getTitle(){return $this->title;}
 
@@ -22,6 +23,8 @@ class CG{
 	function getTags(){return $this->tags;}
 
 	function getImgsrc(){return $this->imgsrc;}
+
+	function getTime(){return $this->publicTime;}
 
 }
 

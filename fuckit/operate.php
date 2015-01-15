@@ -4,6 +4,8 @@ session_start();
 if(!$_SESSION){
 	header('location:index.php');
 }
+
+require('../functions/manager.php');
 ?>
 
 <!DOCTYPE html>
@@ -37,17 +39,31 @@ if(!$_SESSION){
 							<th><li>管理</li></th>
   						</tr>
   						<tr class="mgr-content">
-  							<td><li><input type="checkbox"/></li></td>
-							<td><li>标签孙萨萨</li></td>
-							<td><li>标签孙萨萨</li></td>
-							<td><li>标签孙萨萨</li></td>
-							<td>
-							<li>
-								<button class="btn" name="del">删除</button>
-								<button class="btn" name="del">修改</button>
-								<button class="btn" name="del">查看</button>
-							</li>
-							</td>
+  						<?php
+  							$pdo=new PDO("mysql:dbname=$dbname;host=$host",$user,$password);
+							$cgm=new CGManager($pdo);
+
+							$allCG=$cgm->getAll();
+							if(!is_array($allCG)){
+								echo '<td><li><input type="checkbox"/></li></td>
+							<td><li>暂无数据</li></td>
+							<td><li>暂无数据</li></td>
+							<td><li>暂无数据</li></td>
+							<td><li>暂无数据</li></td>';
+							}else{
+								foreach ($allCG as $key => $value) {
+									echo '<td><li><input type="checkbox"/></li></td>
+							<td><li>'.$value->getTitle().'</li></td>
+							<td><li>'.$value->getIntroduction().'</li></td>
+							<td><li>'.$value->getTime().'</li></td>
+							<td><li>
+								<button class="btn" id="del">删除</button>
+								<button class="btn" id="update">修改</button>
+								<button class="btn" id="watch">查看</button>
+							</li></td>';
+								}
+							}
+  						?>
   						</tr>
 					</table>
 				</div>
