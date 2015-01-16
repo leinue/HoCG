@@ -67,10 +67,18 @@ class pdoOperation{
 	public $alterPW="UPDATE `hocg_admin` SET `pw`=? WHERE `name`=? AND `pw`=?";
 
 	protected static $pdo;
+
+	private $fetchMode=PDO::FETCH_CLASS;
+	private $fetchModeChanged=false;
 	
 	function __construct($pdo){
 		self::$pdo=$pdo;
 		self::$pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false); //禁用prepared statements的仿真效果
+	}
+
+	function setInnerFetchMode($mode){
+		$this->fetchMode=$mode;
+		$this->fetchModeChanged=true;
 	}
 
 	function submitQuery($sql,$arr){
@@ -82,15 +90,19 @@ class pdoOperation{
 		return $result;
 	}
 
-	function fetchClassQuery($sql,$arr,$className){
+	function fetchClassQuery($sql,$arr='',$className=''){
 		if(!(is_array($arr))){
 			return false;
 		}
 		$stmt=self::$pdo->prepare($sql);
 		$res=$stmt->execute($arr);
 
-		$stmt->setFetchMode(PDO::FETCH_CLASS,$className);
-
+		if($this->fetchModeChanged){
+			$stmt->setFetchMode($this->fetchMode);
+		}else{
+			$stmt->setFetchMode($this->fetchMode,$className);
+		}
+		
 		if ($res) {
 			if($draft=$stmt->fetchAll()) {
 				return $draft;

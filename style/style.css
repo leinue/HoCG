@@ -264,12 +264,13 @@ a{
 
 .memo-right-desc{
 	font-size: 14px;
-	color: rgb(185,185,185);
+	color: rgb(171,171,171);
 	margin-top: 5px;
 }
 
 .memo-time{
 	margin-left: 20px;
+	color: rgb(102,102,102);
 }
 
 .memo-right-tags{
