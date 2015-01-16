@@ -7,17 +7,18 @@ if($_SESSION){
   	$pdo=new PDO("mysql:dbname=$dbname;host=$host",$user,$password);
 	$cgm=new CGManager($pdo);
 
+	$id=$_GET['id'];
 	$title=$_GET['title'];
 	$introduction=$_GET['intro'];
 	$description=$_GET['desc'];
 	$imgsrc=$_GET['imgsrc'];
 	$tags=$_GET['tags'];
 
-	if(strlen($title)!=0 && strlen($introduction)!=0 && strlen($introduction)!=0 && strlen($imgsrc)!=0 && strlen($tags)!=0){
-		if($cgm->insert($title,$introduction,$description,$tags,$imgsrc)){
-			echo '1003';//插入新CG成功
+	if(strlen($id)!=0 && strlen($title)!=0 && strlen($introduction)!=0 && strlen($introduction)!=0 && strlen($imgsrc)!=0 && strlen($tags)!=0){
+		if($cgm->insert($id,$title,$introduction,$description,$tags,$imgsrc)){
+			echo '1011';//更新CG成功
 		}else{
-			echo '1004';//插入新CG失败
+			echo '1012';//更新CG失败
 		}
 	}else{
 		echo '1005';//有空数据

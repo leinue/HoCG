@@ -145,6 +145,10 @@ a{
 	height:500px; 
 }
 
+.content-body-img img:hover{
+	cursor: pointer;
+}
+
 /*标签区域*/
 
 .content-tags{
