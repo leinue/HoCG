@@ -60,8 +60,10 @@
 						delCG(this);
 						break;
 					case 'update':
+						updateCG();
 						break;
 					case 'watch':
+						viewCG();
 						break;
 				}
 			});
@@ -75,7 +77,15 @@
 						$(obj).parent().parent().parent().fadeOut();
 						$('.inner-heading').text('CG数据管理  - '+data);
 					}
-				);	
+				);
+			}
+
+			function updateCG(){
+
+			}
+
+			function viewCG(){
+
 			}
 
 		});

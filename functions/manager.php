@@ -145,7 +145,7 @@ class CGManager extends pdoOperation{
 	}
 
 	function getLatest(){
-		return $this->fetchOdd($this->latestCG,array($id));
+		return $this->fetchOdd($this->latestCG,array());
 	}
 
 	function getAmount(){
