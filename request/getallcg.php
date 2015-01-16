@@ -11,9 +11,7 @@ $cgm->setInnerFetchMode(PDO::FETCH_ASSOC);
 
 $result=$cgm->getAll($cgp);
 if($result){
-	foreach ($result as $key => $value) {
-		print_r($value);
-	}
+	echo json_encode($result);
 }else{
 	echo '1010';//读取数据库失败
 }
