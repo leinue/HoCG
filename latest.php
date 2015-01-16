@@ -40,6 +40,14 @@ $data=$cgm->getLatest();
     					imgdiv.animate({opacity:'0.5'},"slow");
     					imgdiv.animate({opacity:'0.9'},"slow");
     				});
-    				
+
+    				$('.heading-title,.de-title,.de-desc,.img-desc,content-detail,.tags li').hover(
+						function(){
+							$(this).stop().animate({opacity:1},'slow');
+						},
+						function(){
+							$(this).stop().animate({opacity:0.6},'slow');
+						}
+					);
 				});
 			</script> 

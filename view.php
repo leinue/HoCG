@@ -57,9 +57,21 @@ if(strlen($cgp)!=0){
 	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
+    		var imgdiv=$(".content-body-img img");
 
+    		imgdiv.hover(function(){
+    		imgdiv.animate({opacity:'0.5'},"slow");
+    		imgdiv.animate({opacity:'0.9'},"slow");
+    		});
 
-
+    		$('.heading-title,.de-desc,.img-desc,content-detail,.tags li').hover(
+				function(){
+					$(this).stop().animate({opacity:1},'slow');
+				},
+				function(){
+					$(this).stop().animate({opacity:0.6},'slow');
+				}
+			);
 		});
 	</script>
 	</body>
