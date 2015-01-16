@@ -60,6 +60,7 @@ class pdoOperation{
 	public $getAllCG="SELECT * FROM `hocg_cg`";
 	public $getOddCG="SELECT * FROM `hocg_cg` WHERE `id`=?";
 	public $latestCG="SELECT * FROM `hocg_cg` WHERE `id` IN (SELECT MAX(`id`) FROM `hocg_cg`)";
+	public $selectAmount="SELECT COUNT(*) FROM `hocg_cg`";
 
 	//ADMIN SQL
 	public $loginIn="SELECT * FROM `hocg_admin` WHERE `name`=? AND `pw`=?";
@@ -145,6 +146,10 @@ class CGManager extends pdoOperation{
 
 	function getLatest(){
 		return $this->fetchOdd($this->latestCG,array($id));
+	}
+
+	function getAmount(){
+		return $this->fetchOdd($this->selectAmount,array())['COUNT(*)'];
 	}
 
 }

@@ -10,10 +10,10 @@ if($_SESSION){
 	$id=$_GET['id'];
 
 	if(strlen($id)!=0){
-		if($cgm->insert($title,$introduction,$description,$tags,$imgsrc)){
-			echo '1003';//插入新CG成功
+		if($cgm->delete($id)){
+			echo '1008';//删除CG成功
 		}else{
-			echo '1004';//插入新CG失败
+			echo '1009';//删除CG失败
 		}
 	}else{
 		echo '1005';//有空数据

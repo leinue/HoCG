@@ -22,7 +22,6 @@
 					}
 				);
 				$('#submit-cg').click(function(){
-					console.log('dsdssd');
 					var title=$('#title').val();
 					var intro=$('#intro').val();
 					var desc=$('#desc').val();
