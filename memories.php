@@ -56,6 +56,18 @@
 				$(this).stop().animate({opacity:0.5},'slow');
 			});
 
+			$('.memo-right-head > a').live('click',function(){
+				sessionStorage['viewp']=$(this).attr('href');
+				//获得当前活跃菜单项的index
+				var liIndex=$('li.active').index();
+				//取消当前活跃菜单项的活跃
+				$('.heading-menu li.active').removeClass('active');
+				//置当前点击的菜单项为活跃
+				$('.heading-menu li:eq(2)').addClass('active');
+				$('.main').load('view.php?p='+sessionStorage['viewp']);
+				return false;
+			});
+
 			function isUserAtBottom(){
 				return (($(document).height()-$(window).height())-$(window).scrollTop())<=50 ? true:false;
 			}
@@ -74,12 +86,12 @@
 						htmlstr+='	<div class="memo-box">';
 						htmlstr+='		<div class="memo-left">';
 						htmlstr+='			<div class="memo-left-img">';
-						htmlstr+='				<img src="'+cgdata[i].imgsrc+'" alt="暂无图片数据" />';
+						htmlstr+='				<a href="'+cgdata[i].id+'"><img src="'+cgdata[i].imgsrc+'" alt="暂无图片数据" /></a>';
 						htmlstr+='			</div>';
 						htmlstr+='		</div>';
 						htmlstr+='		<div class="memo-right">';
 						htmlstr+='			<div class="memo-right-head">';
-						htmlstr+='				<a href="">'+cgdata[i].title+'</a>';
+						htmlstr+='				<a href="'+cgdata[i].id+'">'+cgdata[i].title+'</a>';
 						htmlstr+='			</div>';
 						htmlstr+='		<div class="memo-right-desc">'+cgdata[i].introduction;
 						htmlstr+='			<span class="memo-time">'+cgdata[i].publicTime+'</span>';

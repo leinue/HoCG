@@ -254,6 +254,8 @@ a{
 	height: 100px;
 }
 
+.memo-left-img a{7color: rgb(51,51,51);}
+
 .memo-right{float: left;padding: 10px;}
 
 .memo-right-head{font-size: 20px;}
