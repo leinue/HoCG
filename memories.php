@@ -12,18 +12,22 @@
 		$(document).ready(function(){
 			$('.memo-top,li').css("opacity",'0.4');
 
+			var counter=0;//记录当前页
+			var pageamount=0;//记录总页数
+
 			getData();
 
 			$(document).ready(function(){
 				$(window).scroll(loadData);
 			});
 
-			var counter=0;
-
 			function loadData(){
-				if(isUserAtBottom()){
+				if(isUserAtBottom() && counter<=pageamount[0]){
 					$('.memo-page').fadeIn();
 					getData();
+				}else{
+					$('.memo-page').html('已经是最底层了');
+					$('.memo-page').fadeIn();
 				}
 			}
 
@@ -63,9 +67,9 @@
 				'request/getallcg.php',
 				{page:counter},
 				function(data){
-					var pageamount=data.split("[PAGEAMOUNT]");
+					pageamount=data.split("[PAGEAMOUNT]");
 					var cgdata=JSON.parse(pageamount[1]);
-					for (var i = cgdata.length - 1; i >= 0; i--) {
+					for (var i = 0; i <= cgdata.length - 1; i++) {
 						htmlstr+='<div class="memo-content">';
 						htmlstr+='	<div class="memo-box">';
 						htmlstr+='		<div class="memo-left">';
