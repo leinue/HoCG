@@ -26,7 +26,7 @@ if(strlen($cgp)!=0){
 	<body>
 		<div class="content-panel">
 			<div class="quota twothreeeeight">
-				<input type="text" class="searchform" placeholder="请输入CG序列号" autofocus />
+				<input type="number" class="searchform" required min="0" max="<?php echo $cgm->getAmount(); ?>" placeholder="请输入CG序列号" autofocus />
 				<input type="button" class="btn" id="searchbtn" value="搜索">
 			</div>
 			<div class="content-heading">
@@ -85,20 +85,12 @@ if(strlen($cgp)!=0){
 				}
 			);
 
-			$('.searchbtn').click(function(){
-				$.get(
-					'/request/getcg.php',
-					{p:alterp},
-					function(data){
-						var cgdata=JSON.parse(data);
-						$('#title').attr('value',cgdata.title);
-						$('#intro').text(cgdata.introduction);
-						$('#desc').text(cgdata.description);
-						$('#imgs').text(cgdata.imgsrc);
-						$('#tags').text(cgdata.tags);
-						$('#publictime').text(cgdata.publictime);
-					}
-				);
+			$('#searchbtn').click(function(){
+				var pp=$('.searchform').val();
+				console.log(pp);
+				if(pp!=''){
+					window.location.href="view.php?p="+pp;
+				}
 			});
 		});
 	</script>
