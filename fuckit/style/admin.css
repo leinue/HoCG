@@ -92,6 +92,10 @@ ul{
 	background: rgb(255,255,255);
 }
 
+.mgr-box table li{
+	color: rgb(150,150,150);
+}
+
 .mgr-box table tr{
 	height: 36px;
 }

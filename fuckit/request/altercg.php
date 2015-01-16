@@ -7,9 +7,13 @@ if($_SESSION){
   	$pdo=new PDO("mysql:dbname=$dbname;host=$host",$user,$password);
 	$cgm=new CGManager($pdo);
 
-	$id=$_GET['id'];
+	$title=$_GET['title'];
+	$introduction=$_GET['intro'];
+	$description=$_GET['desc'];
+	$imgsrc=$_GET['imgsrc'];
+	$tags=$_GET['tags'];
 
-	if(strlen($id)!=0){
+	if(strlen($title)!=0 && strlen($introduction)!=0 && strlen($introduction)!=0 && strlen($imgsrc)!=0 && strlen($tags)!=0){
 		if($cgm->insert($title,$introduction,$description,$tags,$imgsrc)){
 			echo '1003';//插入新CG成功
 		}else{

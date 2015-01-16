@@ -4,7 +4,7 @@
 					<input type="text" class="inputarea" placeholder="请输入CG名" id="title" autofocus required />
 					<input type="text" class="inputarea" placeholder="请用一句话介绍此CG" id="intro" autofocus required />
 					<textarea height="200" width="700" placeholder="请输入CG详细介绍" id="desc" autofocus required></textarea>
-					<input type="text" class="inputarea imgsrc" placeholder="请输入CG图片地址(目前不支持图片上传功能)" id="imgs" autofocus required />
+					<input type="text" class="inputarea imgsrc" placeholder="请输入CG图片地址(目前不支持图片上传功能),多张图片用英文状态下逗号分割" id="imgs" autofocus required />
 					<input type="text" class="inputarea imgsrc" placeholder="请输入CG标签,用英文状态下的逗号分割" id="tags" autofocus required />
 				</div>
 				<div class="cg-submit">

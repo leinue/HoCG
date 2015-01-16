@@ -4,6 +4,7 @@
 					<table width="960">
 						<tr>
 							<th><li>选择</li></th>
+							<th><li>序列</li></th>
     						<th><li>标题</li></th>
 							<th><li>描述</li></th>
 							<th><li>时间</li></th>
@@ -21,10 +22,12 @@
 							<td><li>暂无数据</li></td>
 							<td><li>暂无数据</li></td>
 							<td><li>暂无数据</li></td>
+							<td><li>暂无数据</li></td>
 							<td><li>暂无数据</li></td></tr>';
 							}else{
 								foreach ($allCG as $key => $value) {
 									echo '<tr class="mgr-content"><td><li><input type="checkbox"/></li></td>
+							<td><li>'.$value->getID().'</li></td>
 							<td><li>'.$value->getTitle().'</li></td>
 							<td><li>'.$value->getIntroduction().'</li></td>
 							<td><li>'.$value->getTime().'</li></td>

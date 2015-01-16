@@ -7,6 +7,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 * CG类
 */
 class CG{
+	private $id;
 	private $title;
 	private $introduction;
 	private $description;
@@ -25,6 +26,8 @@ class CG{
 	function getImgsrc(){return $this->imgsrc;}
 
 	function getTime(){return $this->publicTime;}
+
+	function getID(){return $this->id;}
 
 }
 

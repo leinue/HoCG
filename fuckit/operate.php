@@ -66,6 +66,7 @@ if(!$_SESSION){
 						$('.main').load('addcg.form.php');
 						break;
 					case 2:
+						$('.main').load('pw.form.php');
 						break;
 				}
 			});
