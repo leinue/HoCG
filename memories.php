@@ -9,6 +9,10 @@
 	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
+			$('.memo-top').css("opacity",'0.4');
+
+			
+
 			$.get(
 				'request/getallcg.php',
 				{},
@@ -33,29 +37,22 @@
 						htmlstr+='		<div class="memo-right-tags">'+cgdata[i].tags;'</div>';
 						htmlstr+='</div></div></div>';
 					};
-
-						console.log(htmlstr);
 					$('.memo-top-box').html(htmlstr);
 				}
 			);
 
-			$('.memo-top,.memo-right-head,.memo-time,.memo-right-desc,.memo-right-tags').css("opacity",'0.4');
-
     		var imgdiv=$(".memo-left-img img");
 
-    		imgdiv.hover(function(){
-    			imgdiv.animate({opacity:'0.4'},"slow");
-    			imgdiv.animate({opacity:'0.9'},"slow");
+    		$(".memo-left-img img").live('hover',function(){
+    			console.log('saasas');
+    			this.animate({opacity:'0.4'},"slow");
+    			this.animate({opacity:'0.9'},"slow");
     		});
 
-    		$('.memo-top,.memo-right-head,.memo-time,.memo-right-desc,.memo-right-tags').hover(
-				function(){
-					$(this).stop().animate({opacity:1},'slow');
-				},
-				function(){
-					$(this).stop().animate({opacity:0.4},'slow');
-				}
-			);
+    		$('.memo-top,.memo-right-head,.memo-time,.memo-right-desc,.memo-right-tags').live('hover',function(){
+				$(this).stop().animate({opacity:1},'slow');
+				$(this).stop().animate({opacity:0.4},'slow');
+    		});
 
 		});
 	</script>

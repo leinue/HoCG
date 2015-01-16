@@ -66,6 +66,9 @@ class pdoOperation{
 	public $loginIn="SELECT * FROM `hocg_admin` WHERE `name`=? AND `pw`=?";
 	public $alterPW="UPDATE `hocg_admin` SET `pw`=? WHERE `name`=? AND `pw`=?";
 
+	//split page
+	public $pageCG="SELECT * FROM `hocg_cg` ORDER BY `id` DESC LIMIT ";
+
 	protected static $pdo;
 
 	private $fetchMode=PDO::FETCH_CLASS;
@@ -162,6 +165,10 @@ class CGManager extends pdoOperation{
 
 	function getAmount(){
 		return $this->fetchOdd($this->selectAmount,array())['COUNT(*)'];
+	}
+
+	function getPartCG($from,$to){
+		return $this->fetchClassQuery($this->pageCG.$from.",".$to,array(),'CG');
 	}
 
 }
