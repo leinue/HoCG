@@ -24,7 +24,6 @@
 			<ul class="menu-list">
 				<li class="normal" id="about">About</li>
 				<li class="normal" id="contact">Contact</li>
-				<li class="normal" id="test">test</li>
 			</ul>
 		</div>
 	

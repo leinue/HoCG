@@ -8,7 +8,7 @@
 				<div class="mgr-box">
 					<table width="960">
 						<tr>
-							<th><li>选择</li></th>
+							<th><li><input type="checkbox" id="selectall"/></li></th>
     						<th><li>标题</li></th>
 							<th><li>描述</li></th>
 							<th><li>时间</li></th>
@@ -18,7 +18,7 @@
   						<?php
 							$allCG=$cgm->getAll();
 							if(!is_array($allCG)){
-								echo '<tr class="mgr-content"><td><li><input type="checkbox"/></li></td>
+								echo '<tr class="mgr-content"><td><li><input class="selectone" type="checkbox"/></li></td>
 							<td><li>暂无数据</li></td>
 							<td><li>暂无数据</li></td>
 							<td><li>暂无数据</li></td>
@@ -39,6 +39,9 @@
   						?>
   						
 					</table>
+				</div>
+				<div class="inner-footer">
+					
 				</div>
 			</div>
 	<script type="text/javascript">
@@ -63,7 +66,8 @@
 						updateCG(this);
 						break;
 					case 'watch':
-						viewCG();
+						var viewrp=$(this).attr('value');
+						viewCG('../view.php?p='+viewrp);
 						break;
 				}
 			});
@@ -91,9 +95,7 @@
 				$('.main').load('altercg.form.php');
 			}
 
-			function viewCG(){
-
-			}
+			function viewCG(url){window.location.href=url;}
 
 		});
 	</script>

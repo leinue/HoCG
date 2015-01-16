@@ -81,9 +81,7 @@ a{
 }
 
 /*右边主页头部*/
-.content-heading{
-	border-bottom: 1px solid rgb(230,230,230);
-}
+.content-heading{border-bottom: 1px solid rgb(230,230,230);}
 
 .content-heading h1{
 	font-size: 200%;
@@ -145,9 +143,7 @@ a{
 	height:500px; 
 }
 
-.content-body-img img:hover{
-	cursor: pointer;
-}
+.content-body-img img:hover{cursor: pointer;}
 
 /*标签区域*/
 
@@ -188,9 +184,7 @@ a{
 	margin-bottom: 10px;
 }
 
-.quota a{
-	color: rgb(255,255,255);
-}
+.quota a{color: rgb(255,255,255);}
 
 .quotactive{
 	background: rgb(31,141,241);
@@ -227,4 +221,61 @@ a{
 .twothreeeeight{
 	background: rgb(250,250,250);
 	border: 1px solid rgb(230,230,230);
+}
+
+/*历史记录*/
+.memo-top{
+	border:1px solid rgb(230,230,230);
+	padding: 20px;
+	background: rgb(250,250,250);
+}
+
+.m-h-t{font-size: 20px;}
+
+.line-box{
+	border-bottom: 1px solid rgb(230,230,230);
+	margin-top: -14px;
+	margin-left: 90px;
+}
+
+.memo-content{margin-top: 20px;}
+
+.memo-box{
+	border:1px solid rgb(230,230,230);
+	background: rgb(250,250,250);
+	margin-bottom: 10px;
+	height: 110px;
+}
+
+.memo-left{
+	float: left;
+	padding: 10px;
+	width: 160px;
+	height: 100px;
+}
+
+.memo-right{float: left;padding: 10px;}
+
+.memo-right-head{font-size: 20px;}
+
+.memo-right-head a{color: rgb(51,51,51);}
+
+.memo-right-head a:hover{color: rgb(153,153,153);}
+
+.memo-right-desc{
+	font-size: 14px;
+	color: rgb(185,185,185);
+	margin-top: 5px;
+}
+
+.memo-time{
+	margin-left: 20px;
+}
+
+.memo-right-tags{
+	color: rgb(95,95,95);
+	font-size: 15px;
+	border-top: 1px solid rgb(216,216,216);
+	margin-top: 10px;
+	padding: 10px;
 }

@@ -81,7 +81,7 @@ if(strlen($cgp)!=0){
 					$(this).stop().animate({opacity:1},'slow');
 				},
 				function(){
-					$(this).stop().animate({opacity:0.6},'slow');
+					$(this).stop().animate({opacity:0.5},'slow');
 				}
 			);
 

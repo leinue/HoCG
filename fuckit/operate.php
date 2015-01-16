@@ -15,7 +15,7 @@ if(!$_SESSION){
  	</head>
 	<body>
 		<div class="heading">
-			<div class="heading-logo"><a href="">HoCG</a></div>
+			<div class="heading-logo"><a href="http://hocg.ivydom.com">HoCG</a></div>
 			<div class="heading-menu">
 				<ul>
 					<li class="active" id="manager">CG管理</li>
