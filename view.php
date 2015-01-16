@@ -36,7 +36,16 @@ if(strlen($cgp)!=0){
 				<P class="de-desc"><?php echo $result['description']; ?></p>
 			</div>
 			<div class="content-body-img">
-				<img alt="赞无图片数据" target="_blank" src="<?php echo $result['imgsrc']; ?>" />
+				<?php
+					$tagsAmount=explode(",",$result['imgsrc']);
+					if(count($tagsAmount)>1){
+						foreach ($tagsAmount as $key => $value) {
+							echo "<img alt=\"赞无图片数据\" target=\"_blank\" src=\"".$value."\" />";
+						}
+					}else{
+						echo "<img alt=\"赞无图片数据\" target=\"_blank\" src=\"".$result['imgsrc']."\" />";
+					}
+				?>
 			</div>
 			
 			<div class="content-tags">

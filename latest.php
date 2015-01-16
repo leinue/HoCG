@@ -21,12 +21,30 @@ $data=$cgm->getLatest();
 				</div>
 
 				<div class="content-body-img">
-					<img alt="赞无图片数据" target="_blank" src="<?php echo $data['imgsrc']; ?>" />
+				<?php
+					$tagsAmount=explode(",",$data['imgsrc']);
+					if(count($tagsAmount)>1){
+						foreach ($tagsAmount as $key => $value) {
+							echo "<img alt=\"赞无图片数据\" target=\"_blank\" src=\"".$value."\" />";
+						}
+					}else{
+						echo "<img alt=\"赞无图片数据\" target=\"_blank\" src=\"".$data['imgsrc']."\" />";
+					}
+				?>
 				</div>
 				
 				<div class="content-tags">
 					<ul class="tags">
-						<li><?php echo $data['tags']; ?></li>
+					<?php
+						$tagsAmount=explode(",",$data['tags']);
+						if(count($tagsAmount)>1){
+							foreach ($tagsAmount as $key => $value) {
+								echo "<li>".$value."</li>";
+							}
+						}else{
+							echo "<li>".$data['tags']."</li>";
+						}
+					?>
 					</ul>
 				</div>
 			</div>
@@ -43,7 +61,7 @@ $data=$cgm->getLatest();
 
     				$('.heading-title,.de-title,.de-desc,.img-desc,content-detail,.tags li').hover(
 						function(){
-							$(this).stop().animate({opacity:1},'slow');
+							$(this).stop().animate({opacity:1.5},'slow');
 						},
 						function(){
 							$(this).stop().animate({opacity:0.6},'slow');
