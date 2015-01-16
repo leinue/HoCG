@@ -4,20 +4,20 @@
 					<span class="m-h-t">历史记录</span>
 					<div class="line-box"></div>
 					<div class="memo-top-box"></div>
+					<div class="memo-page" id="imemo-page">正在加载...</div>
 				</div>
 			</div>
 	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$('.memo-top').css("opacity",'0.4');
-
-			
+			$('.memo-top li').css("opacity",'0.4');
 
 			$.get(
 				'request/getallcg.php',
-				{},
+				{page:0},
 				function(data){
-					var cgdata=JSON.parse(data);
+					var pageamount=data.split("[PAGEAMOUNT]");
+					var cgdata=JSON.parse(pageamount[1]);
 					var htmlstr='';
 					for (var i = cgdata.length - 1; i >= 0; i--) {
 						htmlstr+='<div class="memo-content">';
@@ -56,3 +56,4 @@
 
 		});
 	</script>
+	
