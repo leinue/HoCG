@@ -24,6 +24,7 @@
 			<ul class="menu-list">
 				<li class="normal" id="about">About</li>
 				<li class="normal" id="contact">Contact</li>
+				<li class="normal" id="test">test</li>
 			</ul>
 		</div>
 	
@@ -31,7 +32,14 @@
  
 	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
 	<script type="text/javascript">
+		if(!window.sessionStorage){
+			alert("您的浏览器不支持sessionStorage,有些功能无法使用");
+		}else{
+			sessionStorage['viewp']='1';
+		}
+
 		$(document).ready(function(){
+
 			$('.main').load('latest.php');
 
 			//对左边菜单栏使用渐隐渐显动画效果
@@ -89,7 +97,7 @@
 
 			$('li#view').click(function(){
 				toggleMenu(this);
-				$('.main').load('view.php');
+				$('.main').load('view.php?p='+sessionStorage['viewp']);
 			});
 
 			//对左侧菜单的更换

@@ -8,7 +8,6 @@ $cgm=new CGManager($pdo);
 $data=$cgm->getLatest();
 
 ?>
-
 			<div class="content-panel">
 				<div class="content-heading">
 					<p class="heading-title"><?php echo explode(" ", $data['publicTime'])[0]; ?></p>
@@ -50,7 +49,7 @@ $data=$cgm->getLatest();
 			</div>
 
 			<script src="/jquery/jquery-1.11.1.min.js"></script>
-			<script> 
+			<script>
 				$(document).ready(function(){
     				var imgdiv=$(".content-body-img img");
 

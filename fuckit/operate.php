@@ -20,14 +20,12 @@ if(!$_SESSION){
 				<ul>
 					<li class="active" id="manager">CG管理</li>
 					<li id="addnew">新增CG</li>
+					<li id="alercg">修改CG</li>
 					<li id="pwdmgr">密码管理</li>
 				</ul>
 			</div>
 		</div>
 		<div class="main"></div>
-		<div class="footer">
-			sddssd
-		</div>
 	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
@@ -65,8 +63,11 @@ if(!$_SESSION){
 					case 1:
 						$('.main').load('addcg.form.php');
 						break;
-					case 2:
+					case 3:
 						$('.main').load('pw.form.php');
+						break;
+					case 2:
+						$('.main').load('altercg.form.php');
 						break;
 				}
 			});

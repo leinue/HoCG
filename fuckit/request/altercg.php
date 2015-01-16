@@ -13,6 +13,7 @@ if($_SESSION){
 	$description=$_GET['desc'];
 	$imgsrc=$_GET['imgsrc'];
 	$tags=$_GET['tags'];
+	$publicTime=$_GET['publicTime'];
 
 	if(strlen($id)!=0 && strlen($title)!=0 && strlen($introduction)!=0 && strlen($introduction)!=0 && strlen($imgsrc)!=0 && strlen($tags)!=0){
 		if($cgm->insert($id,$title,$introduction,$description,$tags,$imgsrc)){

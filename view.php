@@ -25,8 +25,9 @@ if(strlen($cgp)!=0){
  	</head>
 	<body>
 		<div class="content-panel">
-			<div class="quota">
-				<input type="text" value="<php echo $time_; ?>" placeholder="请输入CG序列号" autofocus />
+			<div class="quota twothreeeeight">
+				<input type="text" class="searchform" placeholder="请输入CG序列号" autofocus />
+				<input type="button" class="btn" id="searchbtn" value="搜索">
 			</div>
 			<div class="content-heading">
 				<p class="heading-title"><?php echo $result['title']; ?></p>
@@ -66,14 +67,16 @@ if(strlen($cgp)!=0){
 	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
+			$('.btn,.searchform').css("opacity",'0.5');
+
     		var imgdiv=$(".content-body-img img");
 
     		imgdiv.hover(function(){
-    		imgdiv.animate({opacity:'0.5'},"slow");
-    		imgdiv.animate({opacity:'0.9'},"slow");
+    			imgdiv.animate({opacity:'0.5'},"slow");
+    			imgdiv.animate({opacity:'0.9'},"slow");
     		});
 
-    		$('.heading-title,.de-desc,.img-desc,content-detail,.tags li').hover(
+    		$('.heading-title,.btn,.de-desc,.searchform,.img-desc,content-detail,.tags li').hover(
 				function(){
 					$(this).stop().animate({opacity:1},'slow');
 				},
@@ -81,6 +84,22 @@ if(strlen($cgp)!=0){
 					$(this).stop().animate({opacity:0.6},'slow');
 				}
 			);
+
+			$('.searchbtn').click(function(){
+				$.get(
+					'/request/getcg.php',
+					{p:alterp},
+					function(data){
+						var cgdata=JSON.parse(data);
+						$('#title').attr('value',cgdata.title);
+						$('#intro').text(cgdata.introduction);
+						$('#desc').text(cgdata.description);
+						$('#imgs').text(cgdata.imgsrc);
+						$('#tags').text(cgdata.tags);
+						$('#publictime').text(cgdata.publictime);
+					}
+				);
+			});
 		});
 	</script>
 	</body>

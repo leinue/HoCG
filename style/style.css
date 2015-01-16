@@ -196,3 +196,35 @@ a{
 	background: rgb(31,141,241);
 	cursor: pointer;
 }
+
+.searchform{
+	width: 350px;
+	height: 30px;
+	font-size: 14px;
+	font-family: '微软雅黑';
+	border: 1px solid rgb(204,204,204);
+	box-shadow: none;
+	border-radius: 2px;
+}
+
+.btn{
+	font-family: '微软雅黑';
+	width: 50px;
+	height:34px;
+	background: rgb(233,233,233);
+	outline: medium none;
+	font-size: 14px;
+	list-style: outside none none;
+	border: 1px solid rgb(204,204,204);
+	margin-left: -6px;
+}
+
+.btn:hover{
+	cursor: pointer;
+	background: rgb(252,252,252);
+}
+
+.twothreeeeight{
+	background: rgb(250,250,250);
+	border: 1px solid rgb(230,230,230);
+}

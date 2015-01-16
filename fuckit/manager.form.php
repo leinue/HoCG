@@ -31,8 +31,8 @@
 							<td><li>'.$value->getTime().'</li></td>
 							<td><li>
 								<button class="btn" value="'.$value->getID().'" id="del">删除</button>
-								<button class="btn" id="update">修改</button>
-								<button class="btn" id="watch">查看</button>
+								<button class="btn" value="'.$value->getID().'" id="update">修改</button>
+								<button class="btn" value="'.$value->getID().'" id="watch">查看</button>
 							</li></td></tr>';
 								}
 							}
@@ -60,7 +60,7 @@
 						delCG(this);
 						break;
 					case 'update':
-						updateCG();
+						updateCG(this);
 						break;
 					case 'watch':
 						viewCG();
@@ -80,8 +80,15 @@
 				);
 			}
 
-			function updateCG(){
-
+			function updateCG(obj){
+				sessionStorage['alterp']=$(obj).attr('value');
+				//获得当前活跃菜单项的index
+				var liIndex=$('.heading-menu li').index();
+				//取消当前活跃菜单项的活跃
+				$('.heading-menu li.active').removeClass('active');
+				//置当前点击的菜单项为活跃
+				$('.heading-menu li:eq(2)').addClass('active');
+				$('.main').load('altercg.form.php');
 			}
 
 			function viewCG(){

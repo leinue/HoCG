@@ -140,8 +140,8 @@ class CGManager extends pdoOperation{
 		return $this->fetchOdd($this->getOddCG,array($id));
 	}
 
-	function update($id,$title,$introduction,$description,$tags,$imgsrc){
-		return $this->submitQuery($this->updateCG,array($title,$introduction,$description,$tags,$imgsrc,$id));
+	function update($id,$title,$introduction,$description,$tags,$imgsrc,$time){
+		return $this->submitQuery($this->updateCG,array($title,$introduction,$description,$tags,$imgsrc,$time,$id));
 	}
 
 	function getLatest(){
