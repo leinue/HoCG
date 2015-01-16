@@ -15,6 +15,7 @@
 			<ul class="menu-list">
 				<li class="active" id="latest">Latest</li>
 				<li class="normal" id="memories">Memories</li>
+				<li class="normal" id="view">View One</li>
 			</ul>
 			<ul class="menu-list">
 				<li class="normal" id="github">GitHub</li>
@@ -26,9 +27,7 @@
 			</ul>
 		</div>
 	
-		<div class="main">
-
-		</div>
+		<div class="main"></div>
  
 	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
 	<script type="text/javascript">
@@ -86,6 +85,11 @@
 			$('li#history').click(function(){
 				toggleMenu(this);
 				$('.main').load('history.php');
+			});
+
+			$('li#view').click(function(){
+				toggleMenu(this);
+				$('.main').load('view.php');
 			});
 
 			//对左侧菜单的更换

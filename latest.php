@@ -21,7 +21,7 @@ $data=$cgm->getLatest();
 				</div>
 
 				<div class="content-body-img">
-					<img alt="赞无数据" target="_blank" src="<?php echo $data['imgsrc']; ?>" />
+					<img alt="赞无图片数据" target="_blank" src="<?php echo $data['imgsrc']; ?>" />
 				</div>
 				
 				<div class="content-tags">
