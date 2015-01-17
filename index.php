@@ -31,13 +31,10 @@
  
 	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
 	<script type="text/javascript">
-		if(!window.sessionStorage){
-			alert("您的浏览器不支持sessionStorage,有些功能无法使用");
-		}else{
-			sessionStorage['viewp']='1';
-		}
-
 		$(document).ready(function(){
+			if(!window.sessionStorage){
+				alert("您的浏览器不支持sessionStorage,有些功能无法使用");
+			}
 
 			$('.main').load('latest.php');
 

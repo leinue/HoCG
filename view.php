@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ALL ^ E_NOTICE);
-require('/functions/manager.php');
-require('/functions/functions.inc.php');
+require('functions/manager.php');
+require('functions/functions.inc.php');
 
 $cgp=test_input($_GET['p']);
 
@@ -10,11 +10,9 @@ if(strlen($cgp)!=0){
 	$cgm=new CGManager($pdo);
 
 	$result=$cgm->get($cgp);
-	$time_=explode(" ",$result['publicTime'])[0];
-
-}else{
-
-}
+	//$fuck=explode(" ",$result['publicTime']);
+	//$publictime=$fuck[0];
+	if($result){
 ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
@@ -96,3 +94,12 @@ if(strlen($cgp)!=0){
 	</script>
 	</body>
 </html>
+
+<?php
+	}else{
+		header('location:index.php');
+	}
+}else{
+	header('location:index.php');
+}
+?>

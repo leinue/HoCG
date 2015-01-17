@@ -56,14 +56,14 @@
 				$(this).stop().animate({opacity:0.5},'slow');
 			});
 
-			$('.memo-right-head > a').live('click',function(){
+			$('.memo-right-head > a,.memo-left-img > a').live('click',function(){
 				sessionStorage['viewp']=$(this).attr('href');
 				//获得当前活跃菜单项的index
 				var liIndex=$('li.active').index();
 				//取消当前活跃菜单项的活跃
-				$('.heading-menu li.active').removeClass('active');
+				$('li.active').removeClass('active');
 				//置当前点击的菜单项为活跃
-				$('.heading-menu li:eq(2)').addClass('active');
+				$('li:eq(2)').addClass('active');
 				$('.main').load('view.php?p='+sessionStorage['viewp']);
 				return false;
 			});

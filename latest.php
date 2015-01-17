@@ -1,5 +1,5 @@
 <?php
-require('/functions/manager.php');
+require('functions/manager.php');
 error_reporting(E_ALL ^ E_NOTICE);
 
 $pdo=new PDO("mysql:dbname=$dbname;host=$host",$user,$password);
@@ -7,10 +7,13 @@ $cgm=new CGManager($pdo);
 
 $data=$cgm->getLatest();
 
+$timearr=explode(" ", $data['publicTime']);
+
 ?>
 			<div class="content-panel">
+				<div id="latestid" style="display:none;"><?php echo $data['id']; ?></div>
 				<div class="content-heading">
-					<p class="heading-title"><?php echo explode(" ", $data['publicTime'])[0]; ?></p>
+					<p class="heading-title"><?php echo $timearr[0]; ?></p>
 					<p class="img-desc"><?php echo $data['introduction']; ?></p>
 				</div>
 
@@ -66,5 +69,10 @@ $data=$cgm->getLatest();
 							$(this).stop().animate({opacity:0.6},'slow');
 						}
 					);
+
+					if(window.sessionStorage){
+						sessionStorage['viewp']=$('#latestid').html();
+						console.log(sessionStorage['viewp']);
+					}
 				});
 			</script> 

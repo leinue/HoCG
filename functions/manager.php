@@ -164,7 +164,8 @@ class CGManager extends pdoOperation{
 	}
 
 	function getAmount(){
-		return $this->fetchOdd($this->selectAmount,array())['COUNT(*)'];
+		$countarr=$this->fetchOdd($this->selectAmount,array());
+		return $countarr['COUNT(*)'];
 	}
 
 	function getPartCG($from,$to){

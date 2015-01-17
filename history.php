@@ -4,7 +4,14 @@
 					<p class="img-desc">HoCG 更新历史</p>
 				</div>
 				<div class="content-detail">
-					<P class="de-desc">这里会介绍本站的设计理念</p>
+					<P class="de-desc">HoCG使用PHP+HTML5+CSS3+jQuery+AJAX+MySQL开发</p>
+					<P class="de-desc">2015-1-16 晚 HoCG 1.0 发布</p>
+					<P class="de-desc">2015-1-16 开始整合HoCG的AJAX</p>
+					<P class="de-desc">2015-1-15 开始HoCG后台的前端开发</p>
+					<P class="de-desc">2015-1-14 开始HoCG后台开发的数据操作</p>
+					<P class="de-desc">2015-1-13 开始HoCG的前端主界面的设计</p>
+					<P class="de-desc">2015-1-13 完成HoCG的数据库设计</p>
+					<P class="de-desc">2015-1-13 开始HoCG的开发</p>
 				</div>
 				<div class="quota">
 					<a target="_blank" href="https://github.com/leinue/HoCG">https://github.com/leinue/HoCG</a>
