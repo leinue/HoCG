@@ -27,10 +27,10 @@ $timearr=explode(" ", $data['publicTime']);
 					$tagsAmount=explode(",",$data['imgsrc']);
 					if(count($tagsAmount)>1){
 						foreach ($tagsAmount as $key => $value) {
-							echo "<img alt=\"赞无图片数据\" target=\"_blank\" src=\"".$value."\" />";
+							echo "<a href=\"".$value."\" target=\"_blank\"><img alt=\"赞无图片数据\" src=\"".$value."\" /></a>";
 						}
 					}else{
-						echo "<img alt=\"赞无图片数据\" target=\"_blank\" src=\"".$data['imgsrc']."\" />";
+						echo "<a href=\"".$data['imgsrc']."\" target=\"_blank\"><img alt=\"赞无图片数据\" target=\"_blank\" src=\"".$data['imgsrc']."\" /></a>";
 					}
 				?>
 				</div>

@@ -86,7 +86,7 @@
 						htmlstr+='	<div class="memo-box">';
 						htmlstr+='		<div class="memo-left">';
 						htmlstr+='			<div class="memo-left-img">';
-						htmlstr+='				<a href="'+cgdata[i].id+'"><img src="'+cgdata[i].imgsrc+'" alt="暂无图片数据" /></a>';
+						htmlstr+='				<a href="'+cgdata[i].id+'"><img width="160" height="90" src="'+cgdata[i].imgsrc+'" alt="暂无图片数据" /></a>';
 						htmlstr+='			</div>';
 						htmlstr+='		</div>';
 						htmlstr+='		<div class="memo-right">';

@@ -143,6 +143,10 @@ a{
 	height:500px; 
 }
 
+.content-body-img a,.content-body-img a{
+	color: rgb(119,119,119);
+}
+
 .content-body-img img:hover{cursor: pointer;}
 
 /*标签区域*/

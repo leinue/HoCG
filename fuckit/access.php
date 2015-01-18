@@ -6,13 +6,13 @@ require('../functions/functions.inc.php');
 session_start();
 
 if(!$_SESSION){
-	$user=test_input($_POST['user']);
+	$username=test_input($_POST['user']);
 	$pw=test_input($_POST['pw']);
 
-	$pdo=new PDO("mysql:dbname=$dbname;host=$host",$name,$pw);
+	$pdo=new PDO("mysql:dbname=$dbname;host=$host",$user,$password);
 	$am=new adminManager($pdo);
 
-	$loginResult=$am->login($user,$pw);
+	$loginResult=$am->login($username,$pw);
 
 	if($loginResult){
 		$_SESSION['admin']=$loginResult[0]->getName();

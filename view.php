@@ -39,10 +39,10 @@ if(strlen($cgp)!=0){
 					$tagsAmount=explode(",",$result['imgsrc']);
 					if(count($tagsAmount)>1){
 						foreach ($tagsAmount as $key => $value) {
-							echo "<img alt=\"赞无图片数据\" target=\"_blank\" src=\"".$value."\" />";
+							echo "<a href=\"".$value."\" target=\"_blank\"><img alt=\"赞无图片数据\" src=\"".$value."\" /></a>";
 						}
 					}else{
-						echo "<img alt=\"赞无图片数据\" target=\"_blank\" src=\"".$result['imgsrc']."\" />";
+						echo "<a href=\"".$result['imgsrc']."\" target=\"_blank\"><img alt=\"赞无图片数据\" target=\"_blank\" src=\"".$result['imgsrc']."\" /></a>";
 					}
 				?>
 			</div>

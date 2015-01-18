@@ -54,6 +54,7 @@
 					$.get(
 						'request/altercg.php',
 						{
+							id:alterp,
 							title:title,
 							intro:intro,
 							desc:desc,

@@ -5,6 +5,7 @@
 				</div>
 				<div class="content-detail">
 					<P class="de-desc">HoCG使用PHP+HTML5+CSS3+jQuery+AJAX+MySQL开发</p>
+					<P class="de-desc">2015-1-18 HoCG 1.0.1 修正版 上线</p>
 					<P class="de-desc">2015-1-16 晚 HoCG 1.0 发布</p>
 					<P class="de-desc">2015-1-16 开始整合HoCG的AJAX</p>
 					<P class="de-desc">2015-1-15 开始HoCG后台的前端开发</p>
