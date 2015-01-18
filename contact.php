@@ -13,6 +13,6 @@
 					<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=597055914&site=qq&menu=yes">QQ</a>
 				</div>
 				<div class="quota">
-					<a target="_blank" href="http://weibo.com/ivyppl">微博</a>
+					<a target="_blank" href="http://t.qq.com/IvyStk">请原谅我用腾讯微博</a>
 				</div>
 			</div>
