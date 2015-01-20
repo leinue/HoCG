@@ -10,8 +10,7 @@ if(strlen($cgp)!=0){
 	$cgm=new CGManager($pdo);
 
 	$result=$cgm->get($cgp);
-	//$fuck=explode(" ",$result['publicTime']);
-	//$publictime=$fuck[0];
+
 	if($result){
 ?>
 <!DOCTYPE html>
