@@ -16,7 +16,7 @@ if(!$_SESSION){
 
 	if($loginResult){
 		$_SESSION['admin']=$loginResult[0]->getName();
-		echo '1001';//登录成功
+		header("location:index.php");
 	}else{
 		echo '1000';//登录失败
 	}
