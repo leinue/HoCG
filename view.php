@@ -10,7 +10,8 @@ if(strlen($cgp)!=0){
 	$cgm=new CGManager($pdo);
 
 	$result=$cgm->get($cgp);
-
+	//$fuck=explode(" ",$result['publicTime']);
+	//$publictime=$fuck[0];
 	if($result){
 ?>
 <!DOCTYPE html>
@@ -84,7 +85,6 @@ if(strlen($cgp)!=0){
 
 			$('#searchbtn').click(function(){
 				var pp=$('.searchform').val();
-				console.log(pp);
 				if(pp!=''){
 					window.location.href="view.php?p="+pp;
 				}
