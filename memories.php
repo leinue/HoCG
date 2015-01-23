@@ -22,7 +22,7 @@
 			});
 
 			function loadData(){
-				if(isUserAtBottom() && counter<pageamount[0]){
+				if(isUserAtBottom() && counter<=pageamount[0]){
 					$('.memo-page').fadeIn();
 					getData();
 				}else{
@@ -62,7 +62,7 @@
 				var liIndex=$('li.active').index();
 				//取消当前活跃菜单项的活跃
 				$('li.active').removeClass('active');
-				//置当前点击的菜单项为活跃
+				//置当前点击的菜单项活跃
 				$('li:eq(2)').addClass('active');
 				$('.main').load('view.php?p='+sessionStorage['viewp']);
 				return false;

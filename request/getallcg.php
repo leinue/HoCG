@@ -16,14 +16,7 @@ if($page==NULL || (!(is_numeric($page))) || $page>$pageAmount){
 	$page='0';
 }
 
-//echo "page=$page";
-//echo "amount=$pageAmount";
-if($page==0){
-	$result=$cgm->getPartCG($page,$page+10);
-}else{
-	$result=$cgm->getPartCG($page,$page);
-}
-
+$result=$cgm->getPartCG($page,$page+10);
 if($result){
 	echo $pageAmount."[PAGEAMOUNT]".json_encode($result);
 }else{

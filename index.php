@@ -93,15 +93,7 @@
 
 			$('li#view').click(function(){
 				toggleMenu(this);
-				var viewwp=sessionStorage['viewp'];
-				if(viewwp==1){
-					viewwp=1;
-				}
-				else{
-					viewwp=viewwp-1;
-				}
-				console.log(viewwp);
-				$('.main').load('view.php?p='+viewwp);
+				$('.main').load('view.php?p='+sessionStorage['viewp']);
 			});
 
 			//对左侧菜单的更换
@@ -119,6 +111,5 @@
 
 		});
 	</script>
-	<script src="http://s95.cnzz.com/stat.php?id=1254102817&web_id=1254102817" language="JavaScript"></script>
 	</body>
 </html>
